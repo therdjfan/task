@@ -1,0 +1,30 @@
+﻿@using System.Data
+@using System.Data.SqlClient
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "EditView";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <form id="frmDetail" method="post" action="@Url.Action(" UpdateRecord")">
+         Product ID: <input  name="hdnID" value="@Model.Rows[0][" ProductId"]" />
+        Product Name:<input name="prodName" value="@Model.Rows[0]["ProductName"]" />
+        <br />
+        Category ID:<input name="catID" value="@Model.Rows[0][" CategoryId"]" />
+        <br />
+        Category Name:<input name="catName" value="@Model.Rows[0][" CategoryName"]" />
+        <br />
+       
+        <br />
+        <input type="submit" value="Submit" name="action" />
+        <input type="submit" value="Cancel" name="action" />
+    </form>
+</body>
+</html>
